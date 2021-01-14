@@ -1,0 +1,75 @@
+.combobox {
+  position: relative;
+  max-width: 300px;
+  border: 1px solid #808080;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.inputContainer {
+  display: flex;
+}
+
+.input {
+  display: block;
+  width: 100%;
+  padding: 0.5em 0.4em;
+  margin: 0;
+
+  border: none;
+  border-right: 1px solid #808080;
+
+  font-size: 16px;
+}
+
+.clearBtn {
+  display: block;
+  width: 15%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.toggleBtn {
+  display: block;
+  width: 15%;
+  padding: 0;
+  margin: 0;
+  border: none;
+}
+
+.list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  width: 100%;
+
+  border-top: 1px solid #808080;
+}
+
+.listItem {
+  display: block;
+  width: 100%;
+}
+
+.listItem:not(:last-child) {
+  border-bottom: 1px solid #808080;
+}
+
+.listItemBtn {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0.5em 0.4em;
+
+  background: none;
+  border: none;
+
+  text-align: left;
+}
+
+.listItemBtn:hover {
+  background-color: #aabdef;
+  cursor: pointer;
+}
