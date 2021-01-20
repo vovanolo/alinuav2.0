@@ -1,13 +1,14 @@
+@value variables: "../../variables.module.css";
+@value color-secondary, color-border, color-grey_lighter, color-dark, border-radius from variables;
+
 .combobox {
   position: relative;
   max-width: 300px;
-  border: 1px solid #808080;
-  border-radius: 3px;
-  overflow: hidden;
+  display: flex;
 }
 
 .inputContainer {
-  display: flex;
+  position: relative;
 }
 
 .input {
@@ -16,26 +17,37 @@
   padding: 0.5em 0.4em;
   margin: 0;
 
-  border: none;
-  border-right: 1px solid #808080;
+  border: 1px solid color-border;
+  border-radius: border-radius;
 
   font-size: 16px;
+
+  z-index: 2;
 }
 
-.clearBtn {
-  display: block;
-  width: 15%;
-  padding: 0;
-  margin: 0;
-  border: none;
+.inputWithList {
+  composes: input;
+  border-bottom-left-radius: 0%;
+  border-bottom-right-radius: 0%;
 }
 
 .toggleBtn {
   display: block;
-  width: 15%;
-  padding: 0;
-  margin: 0;
+  padding: 0.3em 0.7em;
+  margin-left: 5px;
+
   border: none;
+  border-radius: border-radius;
+
+  background-color: color-grey_lighter;
+  color: color-dark;
+  cursor: pointer;
+
+  z-index: 2;
+}
+
+.toggleBtn:hover {
+  background-color: color-secondary;
 }
 
 .list {
@@ -45,7 +57,15 @@
 
   width: 100%;
 
-  border-top: 1px solid #808080;
+  border: 1px solid color-border;
+  border-radius: border-radius;
+  border-top: none;
+  border-top-left-radius: 0%;
+  border-top-right-radius: 0%;
+
+  position: absolute;
+
+  z-index: 1;
 }
 
 .listItem {
@@ -54,22 +74,23 @@
 }
 
 .listItem:not(:last-child) {
-  border-bottom: 1px solid #808080;
+  border-bottom: 1px solid color-border;
 }
 
 .listItemBtn {
   display: block;
   width: 100%;
   margin: 0;
-  padding: 0.5em 0.4em;
+  padding: 0.3em 0.5em;
 
   background: none;
   border: none;
 
   text-align: left;
+  font-size: 1em;
 }
 
 .listItemBtn:hover {
-  background-color: #aabdef;
+  background-color: color-grey_lighter;
   cursor: pointer;
 }

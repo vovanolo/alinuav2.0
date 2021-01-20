@@ -41,37 +41,38 @@ const Combobox = ({ options, placeholder, value, onChange }) => {
     <div className={styles.combobox}>
       <div className={styles.inputContainer}>
         <input
-          type='text'
-          autoComplete='off'
+          type="text"
+          autoComplete="off"
           placeholder={placeholder}
           value={value}
           onChange={handleOptionChange}
-          className={styles.input}
+          className={optionsVisible ? styles.inputWithList : styles.input}
         />
-        <button
-          type='button'
-          onClick={value ? clearSelectedOption : toggleOptions}
-          className={styles.toggleBtn}
-        >
-          {value ? 'X' : optionsVisible ? 'Hide' : 'Show'}
-        </button>
+
+        {optionsVisible && (
+          <ul className={styles.list}>
+            {filteredOptions.map((option) => (
+              <li key={option} className={styles.listItem}>
+                <button
+                  type="button"
+                  onClick={() => selectOption(option)}
+                  className={styles.listItemBtn}
+                >
+                  {option}
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
       </div>
 
-      {optionsVisible && (
-        <ul className={styles.list}>
-          {filteredOptions.map((option) => (
-            <li key={option} className={styles.listItem}>
-              <button
-                type='button'
-                onClick={() => selectOption(option)}
-                className={styles.listItemBtn}
-              >
-                {option}
-              </button>
-            </li>
-          ))}
-        </ul>
-      )}
+      <button
+        type="button"
+        onClick={value ? clearSelectedOption : toggleOptions}
+        className={styles.toggleBtn}
+      >
+        {value ? 'X' : optionsVisible ? 'Hide' : 'Show'}
+      </button>
     </div>
   );
 };

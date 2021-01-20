@@ -1,6 +1,8 @@
-export default {
-  ukrainian: 'ua',
-  english: 'en',
-  russian: 'ru',
-  polish: 'pl'
+const languages = {
+  Ukrainian: 'ua',
+  English: 'en',
+  Russian: 'ru',
+  Polish: 'pl',
 };
+
+export default languages;

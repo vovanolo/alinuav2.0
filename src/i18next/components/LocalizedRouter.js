@@ -1,6 +1,6 @@
 import { Route, Redirect } from 'react-router-dom';
 
-export const LocalizedRouter = ({ RouterComponent, defaultLanguage, children }) => {
+const LocalizedRouter = ({ RouterComponent, defaultLanguage, children }) => {
   return (
     <RouterComponent>
       <Route path="/:lang([a-z]{2})">
@@ -11,12 +11,14 @@ export const LocalizedRouter = ({ RouterComponent, defaultLanguage, children }) 
           const { pathname } = location;
 
           if (!pathname.includes(`/${lang}/`)) {
-            return <Redirect to={`/${lang}/`} />
+            return <Redirect to={`/${lang}/`} />;
           }
 
           return children;
         }}
       </Route>
     </RouterComponent>
-  )
-}
+  );
+};
+
+export default LocalizedRouter;
