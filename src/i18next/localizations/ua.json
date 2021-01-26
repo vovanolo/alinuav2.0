@@ -6,5 +6,8 @@
     "about-us": {
       "title": "Про нас"
     }
+  },
+  "global": {
+    "contact-us": "Зв'язок"
   }
 }

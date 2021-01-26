@@ -1,14 +1,16 @@
 import { Route, Redirect } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import { urls } from '../../routes';
 
 const LocalizedRouter = ({ RouterComponent, defaultLanguage, children }) => {
+  const { i18n } = useTranslation();
+
   return (
     <RouterComponent>
       <Route path="/:lang([a-z]{2})">
         {({ match, location }) => {
-          const params = match ? match.params : {};
-          const lang = params.lang || defaultLanguage;
+          const lang = i18n.language || defaultLanguage;
 
           const { pathname } = location;
 

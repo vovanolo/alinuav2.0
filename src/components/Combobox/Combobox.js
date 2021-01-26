@@ -68,13 +68,16 @@ const Combobox = ({ options, placeholder, value, onChange, loading }) => {
         )}
       </div>
 
-      <Button
-        type="button"
-        onClick={value ? clearSelectedOption : toggleOptions}
-        loading={loading}
-      >
-        {value ? 'X' : optionsVisible ? 'Hide' : 'Show'}
-      </Button>
+      <div className={styles.btnContainer}>
+        <Button
+          type="button"
+          onClick={value ? clearSelectedOption : toggleOptions}
+          loading={loading}
+          fullHeight
+        >
+          {value ? 'X' : optionsVisible ? 'Hide' : 'Show'}
+        </Button>
+      </div>
     </div>
   );
 };

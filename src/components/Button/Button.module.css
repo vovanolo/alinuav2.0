@@ -1,18 +1,52 @@
 .button {
   display: block;
-  padding: 0.3em 0.7em;
-  margin-left: 5px;
+  padding: 0.5em 0.7em;
 
   border: none;
   border-radius: var(--border-radius);
 
-  background-color: var(--color-grey_lighter);
-  color: var(--color-dark);
+  background-color: transparent;
+  color: var(--color-light);
+
   cursor: pointer;
 
   z-index: 2;
 }
 
-.button:hover {
+.primary {
+  composes: button;
+  background-color: var(--color-main);
+  color: var(--color-light);
+}
+
+.primary:hover {
+  background-color: var(--color-dark);
+}
+
+.secondary {
+  composes: button;
+  background-color: var(--color-grey_lighter);
+  color: var(--color-dark);
+}
+
+.secondary:hover {
   background-color: var(--color-secondary);
+}
+
+.transparent {
+  composes: button;
+  background-color: transparent;
+  color: var(--color-light);
+}
+
+.transparent:hover {
+  background-color: transparent;
+}
+
+.fullWidth {
+  width: 100%;
+}
+
+.fullHeight {
+  height: 100%;
 }

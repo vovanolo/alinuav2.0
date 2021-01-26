@@ -1,7 +1,7 @@
 import { useTranslation } from 'react-i18next';
 import { useLocation, useHistory } from 'react-router-dom';
 
-import { languages } from '../';
+import languages from '../../languages';
 
 const LanguageSwitcher = () => {
   const { i18n } = useTranslation();
@@ -17,15 +17,18 @@ const LanguageSwitcher = () => {
   };
 
   return (
-    <ul>
-      {Object.keys(languages).map((lang) => {
-        return (
-          <li key={lang}>
-            <button onClick={() => changeLanguage(lang)}>{lang}</button>
-          </li>
-        );
-      })}
-    </ul>
+    <div>
+      <span>{i18n.language}</span>
+      <ul>
+        {Object.keys(languages).map((lang) => {
+          return (
+            <li key={lang}>
+              <button onClick={() => changeLanguage(lang)}>{lang}</button>
+            </li>
+          );
+        })}
+      </ul>
+    </div>
   );
 };
 
