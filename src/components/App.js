@@ -1,6 +1,6 @@
-import { BrowserRouter, Route } from 'react-router-dom';
+import { BrowserRouter, Redirect, Route } from 'react-router-dom';
 
-import { routes } from '../routes';
+import { routes, urls } from '../routes';
 import { languages } from '../i18next';
 
 import Layout from './Layout';
@@ -19,6 +19,15 @@ export const App = () => {
               <Component />
             </Route>
           ))}
+
+          <Route path="*">
+            {({ match }) => {
+              const params = match ? match.params : {};
+              const lang = params.lang || languages.Ukrainian;
+
+              return <Redirect to={`/${lang}${urls.notFound}`} />;
+            }}
+          </Route>
         </LocalizedSwitch>
       </Layout>
     </LocalizedRouter>

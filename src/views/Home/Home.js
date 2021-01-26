@@ -18,6 +18,7 @@ const Home = () => {
         options={['Lviv', 'Kharkiv', 'Kyiv']}
         value={option}
         onChange={handleChangeOption}
+        loading
       />
     </div>
   );

@@ -1,5 +1,7 @@
 import { Route, Redirect } from 'react-router-dom';
 
+import { urls } from '../../routes';
+
 const LocalizedRouter = ({ RouterComponent, defaultLanguage, children }) => {
   return (
     <RouterComponent>
@@ -11,7 +13,7 @@ const LocalizedRouter = ({ RouterComponent, defaultLanguage, children }) => {
           const { pathname } = location;
 
           if (!pathname.includes(`/${lang}/`)) {
-            return <Redirect to={`/${lang}/`} />;
+            return <Redirect to={`/${lang}${urls.notFound}`} />;
           }
 
           return children;

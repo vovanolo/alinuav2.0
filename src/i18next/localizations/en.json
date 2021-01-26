@@ -1,7 +1,8 @@
 {
   "translation": {
     "home": {
-      "title": "Home page"
+      "title": "Home page",
+      "sub-title": "Subtitle"
     },
     "about-us": {
       "title": "About Us"

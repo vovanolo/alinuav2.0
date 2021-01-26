@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import styles from './Combobox.module.css';
 
-const Combobox = ({ options, placeholder, value, onChange }) => {
+import Button from '../Button';
+
+const Combobox = ({ options, placeholder, value, onChange, loading }) => {
   const [optionsVisible, setOptionsVisible] = useState(false);
 
   const handleOptionChange = (e) => {
@@ -66,27 +68,29 @@ const Combobox = ({ options, placeholder, value, onChange }) => {
         )}
       </div>
 
-      <button
+      <Button
         type="button"
         onClick={value ? clearSelectedOption : toggleOptions}
-        className={styles.toggleBtn}
+        loading={loading}
       >
         {value ? 'X' : optionsVisible ? 'Hide' : 'Show'}
-      </button>
+      </Button>
     </div>
   );
 };
 
 Combobox.propTypes = {
-  options: PropTypes.arrayOf(PropTypes.string),
-  placeholder: PropTypes.string,
   value: PropTypes.string.isRequired,
   onChange: PropTypes.func.isRequired,
+  options: PropTypes.arrayOf(PropTypes.string),
+  placeholder: PropTypes.string,
+  loading: PropTypes.bool,
 };
 
 Combobox.defaultProps = {
   options: [],
   placeholder: 'Select an option',
+  loading: false,
 };
 
 export default Combobox;
