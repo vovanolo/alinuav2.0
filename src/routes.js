@@ -1,5 +1,8 @@
-import Home from './views/Home';
-import AboutUs from './views/AboutUs';
+import { lazy } from 'react';
+
+// import Home from './views/Home';
+// import AboutUs from './views/AboutUs';
+// import NotFound from './views/NotFound';
 
 export const urls = {
   notFound: '/404',
@@ -11,16 +14,22 @@ export const routes = [
   {
     exact: true,
     path: urls.home,
-    component: Home,
+    component: lazy(() =>
+      import('./views/Home' /* webpackChunkName: 'Home' */),
+    ),
   },
   {
     exact: true,
     path: urls.aboutUs,
-    component: AboutUs,
+    component: lazy(() =>
+      import('./views/AboutUs' /* webpackChunkName: 'AboutUs' */),
+    ),
   },
   {
     exact: true,
     path: urls.notFound,
-    component: () => <h1>Not found</h1>,
+    component: lazy(() =>
+      import('./views/NotFound' /* webpackChunkName: 'NotFound' */),
+    ),
   },
 ];
