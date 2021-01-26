@@ -4,9 +4,13 @@ import styles from './Button.module.css';
 
 import Spinner from '../Spinner';
 
-const Button = ({ children, loading, ...otherProps }) => {
+const Button = ({ children, loading, onClick, ...otherProps }) => {
   return (
-    <button {...otherProps} className={styles.button}>
+    <button
+      className={styles.button}
+      onClick={loading ? null : onClick}
+      {...otherProps}
+    >
       {loading ? <Spinner /> : children}
     </button>
   );

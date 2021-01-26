@@ -51,7 +51,7 @@ const Combobox = ({ options, placeholder, value, onChange, loading }) => {
           className={optionsVisible ? styles.inputWithList : styles.input}
         />
 
-        {optionsVisible && (
+        {optionsVisible && !loading && (
           <ul className={styles.list}>
             {filteredOptions.map((option) => (
               <li key={option} className={styles.listItem}>
