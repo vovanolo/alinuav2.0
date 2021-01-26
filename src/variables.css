@@ -1,0 +1,9 @@
+:root {
+  --color-main: #e31e24;
+  --color-secondary: #d6d6d6;
+  --color-border: #e0e0e0;
+  --color-grey_lighter: #f2f2f2;
+  --color-dark: #212121;
+
+  --border-radius: 5px;
+}
