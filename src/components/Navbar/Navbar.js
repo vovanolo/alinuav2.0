@@ -1,15 +1,17 @@
-import { useTranslation } from 'react-i18next';
+// import { useTranslation } from 'react-i18next';
 
 import styles from './Navbar.module.css';
 
 import logo from '../../assets/icons/alin-logo.svg';
 
-import Button from '../Button';
+// import Button from '../Button';
 import { LanguageSwitcher } from '../../i18next/components';
 import Container from '../Container';
 
+const menuItems = ['tester', 'tester', 'tester'];
+
 const Navbar = () => {
-  const { t } = useTranslation();
+  // const { t } = useTranslation();
 
   return (
     <header className={styles.header}>
@@ -20,9 +22,13 @@ const Navbar = () => {
           </div>
           <div className={styles.menuContainer}>
             <ul className={styles.menuList}>
-              <li className={styles.menuItem}>tester</li>
-              <li className={styles.menuItem}>tester</li>
-              <li className={styles.menuItem}>tester</li>
+              {menuItems.map((item, index) => (
+                <li key={index} className={styles.menuItem}>
+                  <button className={styles.menuItemBtn} type="button">
+                    {item}
+                  </button>
+                </li>
+              ))}
             </ul>
           </div>
           <div className={styles.languageSwitcherContainer}>

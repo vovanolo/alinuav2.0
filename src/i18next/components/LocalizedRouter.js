@@ -9,7 +9,7 @@ const LocalizedRouter = ({ RouterComponent, defaultLanguage, children }) => {
   return (
     <RouterComponent>
       <Route path="/:lang([a-z]{2})">
-        {({ match, location }) => {
+        {({ location }) => {
           const lang = i18n.language || defaultLanguage;
 
           const { pathname } = location;

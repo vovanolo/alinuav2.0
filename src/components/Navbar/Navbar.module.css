@@ -32,3 +32,10 @@
 .menuItem:not(:last-child) {
   margin-right: 51px;
 }
+
+.menuItemBtn {
+  cursor: pointer;
+  border: none;
+  padding: 0;
+  margin: 0;
+}
