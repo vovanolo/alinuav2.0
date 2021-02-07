@@ -1,18 +1,13 @@
-// import { useTranslation } from 'react-i18next';
-
 import styles from './Navbar.module.css';
 
 import logo from '../../assets/icons/alin-logo.svg';
 
-// import Button from '../Button';
 import { LanguageSwitcher } from '../../i18next/components';
 import Container from '../Container';
 
 const menuItems = ['tester', 'tester', 'tester'];
 
-const Navbar = () => {
-  // const { t } = useTranslation();
-
+const Navbar: React.FC = () => {
   return (
     <header className={styles.header}>
       <Container>
@@ -34,9 +29,6 @@ const Navbar = () => {
           <div className={styles.languageSwitcherContainer}>
             <LanguageSwitcher />
           </div>
-          {/* <div className={styles.contactBtnContainer}>
-            <Button variant="primary">{t('global:contact-us')}</Button>
-          </div> */}
         </nav>
       </Container>
     </header>

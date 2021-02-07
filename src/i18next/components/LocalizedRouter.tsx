@@ -2,8 +2,18 @@ import { Route, Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { urls } from '../../routes';
+import { Languages } from '../languages';
 
-const LocalizedRouter = ({ RouterComponent, defaultLanguage, children }) => {
+interface IProps {
+  RouterComponent: React.ComponentType;
+  defaultLanguage: Languages;
+}
+
+const LocalizedRouter: React.FC<IProps> = ({
+  RouterComponent,
+  defaultLanguage,
+  children,
+}) => {
   const { i18n } = useTranslation();
 
   return (

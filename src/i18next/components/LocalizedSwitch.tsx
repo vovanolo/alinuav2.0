@@ -1,16 +1,16 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
-import { Route, Switch } from 'react-router-dom';
+import { RouteProps, Switch } from 'react-router-dom';
 
-const LocalizedSwitch = ({ children }) => {
+const LocalizedSwitch: React.FC = ({ children }) => {
   const { i18n } = useTranslation();
 
-  const localizePath = (path) => {
+  const localizePath = (path: any) => {
     switch (typeof path) {
       case 'undefined':
         return undefined;
       case 'object':
-        return path.map((key) => `/${i18n.language}${key}`);
+        return path.map((key: string) => `/${i18n.language}${key}`);
       default:
         const isFallbackRoute = path === '*';
         return isFallbackRoute ? path : `/${i18n.language}${path}`;
@@ -19,14 +19,14 @@ const LocalizedSwitch = ({ children }) => {
 
   return (
     <Switch>
-      {React.Children.map(children, (child) => {
-        return child.type === Route
+      {React.Children.map(children, (child) =>
+        React.isValidElement<RouteProps>(child)
           ? React.cloneElement(child, {
               ...child.props,
               path: localizePath(child.props.path),
             })
-          : child;
-      })}
+          : child
+      )}
     </Switch>
   );
 };

@@ -1,6 +1,6 @@
 import Spinner from '../Spinner';
 
-const PageLoader = () => {
+const PageLoader: React.FC = () => {
   return (
     <div>
       <Spinner />

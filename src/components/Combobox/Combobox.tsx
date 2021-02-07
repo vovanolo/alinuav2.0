@@ -1,19 +1,32 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 
 import styles from './Combobox.module.css';
 
 import Button from '../Button';
 
-const Combobox = ({ options, placeholder, value, onChange, loading }) => {
+interface IProps {
+  placeholder?: string;
+  loading?: boolean;
+  value: string;
+  options: string[];
+  onChange: (option: string) => void;
+}
+
+const Combobox: React.FC<IProps> = ({
+  placeholder = 'Select an option',
+  loading = false,
+  value,
+  options,
+  onChange,
+}) => {
   const [optionsVisible, setOptionsVisible] = useState(false);
 
-  const handleOptionChange = (e) => {
+  const handleOptionChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     onChange(e.target.value);
     showOptions();
   };
 
-  const selectOption = (option) => {
+  const selectOption = (option: string) => {
     onChange(option);
     hideOptions();
   };
@@ -35,7 +48,7 @@ const Combobox = ({ options, placeholder, value, onChange, loading }) => {
     setOptionsVisible((visible) => !visible);
   };
 
-  const filteredOptions = options.filter((option) => {
+  const filteredOptions = options.filter((option: string) => {
     return option.toLowerCase().includes(value.toLowerCase());
   });
 
@@ -80,14 +93,6 @@ const Combobox = ({ options, placeholder, value, onChange, loading }) => {
       </div>
     </div>
   );
-};
-
-Combobox.propTypes = {
-  value: PropTypes.string.isRequired,
-  onChange: PropTypes.func.isRequired,
-  options: PropTypes.arrayOf(PropTypes.string),
-  placeholder: PropTypes.string,
-  loading: PropTypes.bool,
 };
 
 Combobox.defaultProps = {

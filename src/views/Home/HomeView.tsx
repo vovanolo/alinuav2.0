@@ -5,10 +5,10 @@ import Combobox from '../../components/Combobox';
 import { LocalizedLink as Link } from '../../i18next/components';
 
 const Home = () => {
-  const [option, setOption] = useState('');
+  const [option, setOption] = useState<string>('');
   const { t } = useTranslation();
 
-  const handleChangeOption = (value) => {
+  const handleChangeOption = (value: string) => {
     setOption(value);
   };
 

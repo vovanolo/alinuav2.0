@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 
 import styles from './Container.module.css';
 
-const Container = ({ children }) => {
+const Container: React.FC = ({ children }) => {
   return <div className={styles.container}>{children}</div>;
 };
 

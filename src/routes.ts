@@ -14,22 +14,22 @@ export const routes = [
   {
     exact: true,
     path: urls.home,
-    component: lazy(() =>
-      import('./views/Home' /* webpackChunkName: 'Home' */),
+    component: lazy(
+      () => import('./views/Home' /* webpackChunkName: 'Home' */)
     ),
   },
   {
     exact: true,
     path: urls.aboutUs,
-    component: lazy(() =>
-      import('./views/AboutUs' /* webpackChunkName: 'AboutUs' */),
+    component: lazy(
+      () => import('./views/AboutUs' /* webpackChunkName: 'AboutUs' */)
     ),
   },
   {
     exact: true,
     path: urls.notFound,
-    component: lazy(() =>
-      import('./views/NotFound' /* webpackChunkName: 'NotFound' */),
+    component: lazy(
+      () => import('./views/NotFound' /* webpackChunkName: 'NotFound' */)
     ),
   },
 ];

@@ -2,16 +2,14 @@ import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
 
 import * as localizations from './localizations';
-import langs from './languages.js';
+import { Languages } from './languages';
 
 i18n.use(initReactI18next).init({
   debug: true,
-  lng: langs.Ukrainian,
-  fallbackLng: langs.Ukrainian,
+  lng: Languages.Ukrainian,
+  fallbackLng: Languages.Ukrainian,
   resources: localizations,
-  supportedLngs: Object.values(langs),
+  supportedLngs: Object.values(Languages),
 });
-
-export const languages = langs;
 
 export default i18n;
