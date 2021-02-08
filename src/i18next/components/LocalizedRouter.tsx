@@ -2,11 +2,11 @@ import { Route, Redirect } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 
 import { urls } from '../../routes';
-import { Languages } from '../languages';
+import { Language } from '../enum/language';
 
 interface IProps {
   RouterComponent: React.ComponentType;
-  defaultLanguage: Languages;
+  defaultLanguage: Language;
 }
 
 const LocalizedRouter: React.FC<IProps> = ({
