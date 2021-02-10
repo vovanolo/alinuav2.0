@@ -40,15 +40,16 @@ const Button: React.FC<IProps> = ({
   const btnClasses = buildBtnClasses(variant, fullHeight, fullWidth);
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    if (loading) {
-      return;
-    }
-
     onClick!(e);
   };
 
   return (
-    <button className={btnClasses.join(' ')} onClick={handleClick} type={type}>
+    <button
+      className={btnClasses.join(' ')}
+      onClick={handleClick}
+      type={type}
+      disabled={loading}
+    >
       {loading ? <Spinner /> : children}
     </button>
   );
