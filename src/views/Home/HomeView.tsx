@@ -5,7 +5,6 @@ import Combobox from '../../components/Combobox';
 import NewsCard from '../../components/NewsCard';
 import Container from '../../components/Container';
 
-
 import { LocalizedLink as Link } from '../../i18next/components';
 
 const Home = () => {
@@ -39,7 +38,7 @@ const Home = () => {
         onChange={handleChangeOption}
       />
       <Container>
-        <NewsCard/>
+        <NewsCard />
       </Container>
     </div>
   );
