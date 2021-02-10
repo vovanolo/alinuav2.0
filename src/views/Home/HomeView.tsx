@@ -2,6 +2,10 @@ import { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 
 import Combobox from '../../components/Combobox';
+import NewsCard from '../../components/NewsCard';
+import Container from '../../components/Container';
+
+
 import { LocalizedLink as Link } from '../../i18next/components';
 
 const Home = () => {
@@ -21,6 +25,9 @@ const Home = () => {
         value={option}
         onChange={handleChangeOption}
       />
+      <Container>
+        <NewsCard/>
+      </Container>
     </div>
   );
 };

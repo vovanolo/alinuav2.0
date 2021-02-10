@@ -4,13 +4,20 @@ import { lazy } from 'react';
 // import AboutUs from './views/AboutUs';
 // import NotFound from './views/NotFound';
 
+interface IRoute {
+  exact: boolean;
+  path: string;
+  component: React.ComponentType;
+}
+
 export const urls = {
   notFound: '/404',
   home: '/',
   aboutUs: '/about-us',
+  rent: '/rent',
 };
 
-export const routes = [
+export const routes: IRoute[] = [
   {
     exact: true,
     path: urls.home,
@@ -30,6 +37,13 @@ export const routes = [
     path: urls.notFound,
     component: lazy(
       () => import('./views/NotFound' /* webpackChunkName: 'NotFound' */)
+    ),
+  },
+  {
+    exact: true,
+    path: urls.rent,
+    component: lazy(
+      () => import('./views/Rent' /* webpackChunkName: 'Rent' */)
     ),
   },
 ];

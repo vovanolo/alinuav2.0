@@ -95,10 +95,4 @@ const Combobox: React.FC<IProps> = ({
   );
 };
 
-Combobox.defaultProps = {
-  options: [],
-  placeholder: 'Select an option',
-  loading: false,
-};
-
 export default Combobox;
