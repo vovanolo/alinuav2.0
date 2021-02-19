@@ -1,0 +1,55 @@
+.imgContainer {
+  height: 206px;
+  overflow: hidden;
+}
+
+.specName {
+  margin-left: 2px;
+  vertical-align: center;
+  display: inline-block;
+}
+
+.specIcon {
+  vertical-align: center;
+  margin-top: -3px;
+}
+
+.infoList {
+  margin-top: 13px;
+  margin-bottom: 30px;
+  padding: 0;
+  list-style: none;
+}
+
+.infoItemTitle {
+  margin-left: 12px;
+}
+
+.priceList {
+  padding: 0;
+  display: flex;
+}
+
+.listItem {
+  list-style: none;
+  text-align: center;
+  width: 100%;
+}
+
+.listItem:not(:first-child):not(:last-child) {
+  margin: 0 5px;
+}
+
+.car-info__price-list-days,
+.car-info__price-list-price {
+  padding: 8px 1px;
+}
+
+.listDays {
+  background-color: var(--color-grey_light);
+}
+
+.redSaleColor {
+  color: red;
+  font-weight: 600;
+}

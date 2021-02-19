@@ -1,7 +1,26 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
 html {
   font-family: sans-serif;
+}
+
+.img-responsive {
+  display: block;
+  max-height: 100%;
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  object-position: center;
+}
+
+.img-responsive_cover {
+  object-fit: cover;
+}
+
+.img-responsive_contain {
+  object-fit: contain;
 }
